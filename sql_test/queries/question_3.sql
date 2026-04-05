@@ -1,6 +1,6 @@
 select 
 	sc.BUSINESS_NAME,
-	SUM(ss.SALES_VALUE)
+	SUM(ss.SALES_VALUE) as TOTAL_SALES_VALUE
 from data_store_cad sc
 inner join data_store_sales ss on sc.STORE_CODE = ss.STORE_CODE 
 WHERE 
