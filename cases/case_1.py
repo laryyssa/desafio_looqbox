@@ -55,7 +55,8 @@ def retrieve_data(
         database=database,
         port=port
     )
-    df = pd.read_sql(query, engine)
+    with engine.connect() as conn:
+        df = pd.read_sql(query, engine)
 
     print(df.head())
 
